@@ -1,0 +1,15 @@
+services:
+  jupyter-notebook:
+    build: .
+    ports:
+      - "8888:8888"
+      - "6006:6006"
+    volumes:
+      - ./tf-work-directories:/tf-work-directories
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
