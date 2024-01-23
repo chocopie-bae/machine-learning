@@ -4,6 +4,7 @@ FROM tensorflow/tensorflow:latest-gpu
 WORKDIR /tf-work-directories
 
 RUN pip install -U jupyter pandas matplotlib tensorflow-hub scikit-learn
+RUN pip install opencv-python-headless
 
 EXPOSE 8888
 EXPOSE 6006
